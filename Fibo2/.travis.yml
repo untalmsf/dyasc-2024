@@ -3,5 +3,4 @@ jdk:
   - openjdk11
 
 script:
-  - cd Fibo2  
   - mvn clean install
