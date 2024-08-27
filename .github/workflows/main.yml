@@ -19,8 +19,14 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '11'
+
+    - name: Download JUnit JAR
+      run: |
+        wget https://search.maven.org/remotecontent?filepath=junit/junit/4.13.2/junit-4.13.2.jar -O junit.jar
+        wget https://search.maven.org/remotecontent?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar -O hamcrest.jar
+        
     - name: Compile Java code
       run: javac -d bin Fibo2/dyasc-2024-main/untref-dyasc-material-main/proyecto-base/src/main/java/ar/edu/untref/dyasc/FibonacciApp.java
       
     - name: Run tests
-      run: java -cp bin org.junit.runner.JUnitCore ar.edu.untref.dyasc.FibonacciAppTest
+      run:  java -cp "bin:junit.jar:hamcrest.jar" org.junit.runner.JUnitCore ar.edu.untref.dyasc.FibonacciAppTest
