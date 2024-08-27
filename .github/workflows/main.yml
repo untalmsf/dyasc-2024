@@ -24,6 +24,7 @@ jobs:
       run: |
         wget https://search.maven.org/remotecontent?filepath=junit/junit/4.13.2/junit-4.13.2.jar -O junit.jar
         wget https://search.maven.org/remotecontent?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar -O hamcrest.jar
+        wget https://search.maven.org/remotecontent?filepath=org/assertj/assertj-core/3.22.0/assertj-core-3.22.0.jar -O assertj-core.jar
         
     - name: Compile Java code
       run: |
