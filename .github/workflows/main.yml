@@ -19,6 +19,8 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '11'
-
+    - name: Compile Java code
+      run: javac -d bin dyasc-2024/Fibo2/dyasc-2024-main/untref-dyasc-material-main/proyecto-base/src/main/java/ar/edu/untref/dyasc/*.java
+      
     - name: Run tests
-      run: mvn test
+      run: java -cp bin org.junit.runner.JUnitCore ar.edu.untref.dyasc.FibonacciAppTest
