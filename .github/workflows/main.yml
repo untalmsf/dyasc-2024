@@ -28,6 +28,7 @@ jobs:
         
     - name: Compile Java code
       run: |
+        mkdir -p bin
         javac -d bin Fibo2/dyasc-2024-main/untref-dyasc-material-main/proyecto-base/src/main/java/ar/edu/untref/dyasc/*.java
         javac -d bin -cp bin Fibo2/dyasc-2024-main/untref-dyasc-material-main/proyecto-base/src/test/java/ar/edu/untref/dyasc/*.java
     
@@ -35,4 +36,6 @@ jobs:
       run: ls -R bin
       
     - name: Run tests
-      run:  java -cp "bin:junit.jar:hamcrest.jar" org.junit.runner.JUnitCore ar.edu.untref.dyasc.FibonacciAppTest
+      run:  java -cp "bin:junit.jar:hamcrest.jar:assertj-core.jar" org.junit.runner.JUnitCore ar.edu.untref.dyasc.FibonacciAppTest
+        
+      
