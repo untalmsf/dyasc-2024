@@ -18,7 +18,10 @@ public class juegoTenis {
 
     public void pelotaExitosa(String jugador) {
         if (jugador.equals("Jugador1")) {
-            this.puntaje1 += 15;
+            if (this.puntaje1 == 30) {
+                this.puntaje1 = 40;
+            } else
+                this.puntaje1 += 15;
         } else
             this.puntaje2 = 0;
 
