@@ -1,17 +1,26 @@
 public class juegoTenis {
 
-    int puntaje;
+    int puntaje1;
+    int puntaje2;
 
     public juegoTenis(String jugador1, String jugador2) {
-        this.puntaje = 0;
+        this.puntaje1 = 0;
+        this.puntaje2 = 0;
     }
 
     public int obtenerPuntaje(String jugador) {
-        return this.puntaje;
+        if (jugador.equals("Jugador1")) {
+            return this.puntaje1;
+        }
+
+        return this.puntaje2;
     }
 
-    public int pelotaExitosa(String jugador) {
-        this.puntaje = 15;
-        return this.puntaje;
+    public void pelotaExitosa(String jugador) {
+        if (jugador.equals("Jugador1")) {
+            this.puntaje1 += 15;
+        } else
+            this.puntaje2 = 0;
+
     }
 }

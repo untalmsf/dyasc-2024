@@ -9,24 +9,34 @@ public class juegoTenisTest {
 
     @BeforeEach
     public void setUp() {
-        juego = new juegoTenis("Jugador 1", "Jugador 2");
+        juego = new juegoTenis("Jugador1", "Jugador2");
     }
 
     @Test
     public void losJugadoresEmpiezanConCeroPuntos() {
-        assertEquals(0, juego.obtenerPuntaje("Jugador 1"));
-        assertEquals(0, juego.obtenerPuntaje("Jugador 2"));
+        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
     }
+
     @Test
     public void Jugador1PelotaExitoso() {
-        juego.pelotaExitosa("jugador1");
-        assertEquals(15, juego.obtenerPuntaje("Jugador 1"));
+        juego.pelotaExitosa("Jugador1");
+        assertEquals(15, juego.obtenerPuntaje("Jugador1"));
     }
-    
+
     @Test
     public void primerPunto() {
-        juego.pelotaExitosa("jugador1");
-        assertEquals(15, juego.obtenerPuntaje("Jugador 1"));
-        assertEquals(0, juego.obtenerPuntaje("Jugador 2"));
+        juego.pelotaExitosa("Jugador1");
+        assertEquals(15, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
     }
+
+    @Test
+    public void SegundoPunto() {
+        juego.pelotaExitosa("Jugador1");
+        assertEquals(30, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+    }
+
+
 }
