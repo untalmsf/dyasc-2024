@@ -148,6 +148,34 @@ public class juegoTenisTest {
         assertEquals(0, juego.obtenerPuntaje("Jugador2"));
     }
 
-   
+    @Test
+    public void quinceAquince() {
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        assertEquals(15, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(15, juego.obtenerPuntaje("Jugador2"));
+    }
+
+    @Test
+    public void treintaAtreinta() {
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        assertEquals(30, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(30, juego.obtenerPuntaje("Jugador2"));
+    }
+
+    @Test
+    public void cuarentaAcuarenta() {
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        assertEquals(40, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(40, juego.obtenerPuntaje("Jugador2"));
+    }
 
 }
