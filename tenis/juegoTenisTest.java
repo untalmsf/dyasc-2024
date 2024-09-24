@@ -17,4 +17,10 @@ public class juegoTenisTest {
         assertEquals(0, juego.obtenerPuntaje("Jugador 1"));
         assertEquals(0, juego.obtenerPuntaje("Jugador 2"));
     }
+    @Test
+    public void losJugador1PelotaExitoso() {
+        juego.pelotaExitosa("jugador1");
+        assertEquals(15, juego.obtenerPuntaje("Jugador 1"));
+        assertEquals(0, juego.obtenerPuntaje("Jugador 2"));
+    }
 }

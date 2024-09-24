@@ -7,4 +7,7 @@ public class juegoTenis {
     public int obtenerPuntaje(String jugador) {
         return 0;
     }
+    public int pelotaExitosa(String jugador){
+        return 15;
+    }
 }
