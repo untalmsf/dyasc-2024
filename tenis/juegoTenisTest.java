@@ -82,4 +82,14 @@ public class juegoTenisTest {
         assertEquals(40, juego.obtenerPuntaje("Jugador2"));
     }
 
+    @Test
+    public void primerGameJugador2() {
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador3");
+        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+    }
+
 }
