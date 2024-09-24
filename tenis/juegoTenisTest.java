@@ -87,9 +87,67 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
-        juego.pelotaExitosa("Jugador3");
+        juego.pelotaExitosa("Jugador2");
         assertEquals(0, juego.obtenerPuntaje("Jugador1"));
         assertEquals(0, juego.obtenerPuntaje("Jugador2"));
     }
+
+    @Test
+    public void primerPuntoSegundoGame() {
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+    }
+
+    @Test
+    public void segundoGameGanadoJugador2() {
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+    }
+
+    @Test
+    public void segundoGameGanadoJugador1() {
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+    }
+
+    @Test
+    public void segundoGameTerminado() {
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+    }
+
+   
 
 }

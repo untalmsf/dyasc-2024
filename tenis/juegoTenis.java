@@ -32,6 +32,9 @@ public class juegoTenis {
         } else
             if (this.puntaje2 == 30) {
                 this.puntaje2 = 40;
+            } else if (this.puntaje2 == 40) {
+                this.puntaje2 = 0;
+                this.set2 = 1;
             }else
                 this.puntaje2 += 15;
 
