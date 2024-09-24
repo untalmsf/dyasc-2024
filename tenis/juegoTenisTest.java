@@ -34,9 +34,18 @@ public class juegoTenisTest {
     @Test
     public void SegundoPunto() {
         juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
         assertEquals(30, juego.obtenerPuntaje("Jugador1"));
         assertEquals(0, juego.obtenerPuntaje("Jugador2"));
     }
 
+    @Test
+    public void TercerPunto() {
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        assertEquals(40, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+    }
 
 }
