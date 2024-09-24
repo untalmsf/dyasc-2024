@@ -1,13 +1,17 @@
 public class juegoTenis {
 
-    public juegoTenis(String jugador1, String jugador2) {
+    int puntaje;
 
+    public juegoTenis(String jugador1, String jugador2) {
+        this.puntaje = 0;
     }
 
     public int obtenerPuntaje(String jugador) {
-        return 0;
+        return this.puntaje;
     }
-    public int pelotaExitosa(String jugador){
-        return 15;
+
+    public int pelotaExitosa(String jugador) {
+        this.puntaje = 15;
+        return this.puntaje;
     }
 }
