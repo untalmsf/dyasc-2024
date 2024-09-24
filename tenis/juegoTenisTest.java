@@ -32,7 +32,7 @@ public class juegoTenisTest {
     }
 
     @Test
-    public void SegundoPunto() {
+    public void segundoPunto() {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         assertEquals(30, juego.obtenerPuntaje("Jugador1"));
@@ -40,7 +40,7 @@ public class juegoTenisTest {
     }
 
     @Test
-    public void TercerPunto() {
+    public void tercerPunto() {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
@@ -49,7 +49,7 @@ public class juegoTenisTest {
     }
 
     @Test
-    public void PrimerGame() {
+    public void primerGame() {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
@@ -60,9 +60,26 @@ public class juegoTenisTest {
 
     @Test
     public void primerPuntoJugador2() {
-        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
         assertEquals(0, juego.obtenerPuntaje("Jugador1"));
         assertEquals(15, juego.obtenerPuntaje("Jugador2"));
+    }
+
+    @Test
+    public void segundoPuntoJugador2() {
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(30, juego.obtenerPuntaje("Jugador2"));
+    }
+
+    @Test
+    public void tercerPuntoJugador2() {
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(40, juego.obtenerPuntaje("Jugador2"));
     }
 
 }

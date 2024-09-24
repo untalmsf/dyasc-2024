@@ -30,7 +30,7 @@ public class juegoTenis {
             } else
                 this.puntaje1 += 15;
         } else
-            this.puntaje2 = 0;
+            this.puntaje2 += 15;
 
     }
 }
