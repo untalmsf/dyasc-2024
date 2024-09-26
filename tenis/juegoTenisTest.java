@@ -1,4 +1,3 @@
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -179,29 +178,6 @@ public class juegoTenisTest {
     }
 
     @Test
-    public void cuarentaAtreinta() {
-        juego.pelotaExitosa("Jugador1");
-        juego.pelotaExitosa("Jugador2");
-        juego.pelotaExitosa("Jugador1");
-        juego.pelotaExitosa("Jugador2");
-        juego.pelotaExitosa("Jugador1");
-        assertEquals(40, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(30, juego.obtenerPuntaje("Jugador2"));
-    }
-
-    @Test
-    public void obtenerMarcadorPartido() {
-        juego.pelotaExitosa("Jugador1");
-        juego.pelotaExitosa("Jugador2");
-        juego.pelotaExitosa("Jugador1");
-        juego.pelotaExitosa("Jugador2");
-        juego.pelotaExitosa("Jugador1");
-        int[] marcador = juego.marcador("Jugador1","Jugador2");
-        assertEquals(40, marcador[0]);
-        assertEquals(30, marcador[1]);
-    }
-
-    @Test
     public void reiniciarPuentos() {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador2");
@@ -215,4 +191,40 @@ public class juegoTenisTest {
         assertEquals(1, marcador[2]);
         assertEquals(0, marcador[3]);
     }
+
+    @Test
+    public void hayDeuce() {
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        int[] marcador = juego.marcador("Jugador1","Jugador2");
+        assertTrue(juego.hayDeuce());
+        assertEquals(40, marcador[0]);
+        assertEquals(40, marcador[1]);
+        assertEquals(0, marcador[2]);
+        assertEquals(0, marcador[3]);
+    }
+    
+    @Test
+    public void matchpoint() {
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        int[] marcador = juego.marcador("Jugador1","Jugador2");
+        assertEquals(40, marcador[0]);
+        assertEquals(40, marcador[1]);
+        assertEquals(1, marcador[2]);
+        assertEquals(0, marcador[3]);
+        assertEquals(0, marcador[4]);
+    }
+
+    
+
 }
