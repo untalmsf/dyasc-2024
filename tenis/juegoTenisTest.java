@@ -196,8 +196,23 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador1");
-        int[] marcador = juego.marcador();
-        assertEquals(40, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(30, juego.obtenerPuntaje("Jugador2"));
+        int[] marcador = juego.marcador("Jugador1","Jugador2");
+        assertEquals(40, marcador[0]);
+        assertEquals(30, marcador[1]);
+    }
+
+    @Test
+    public void reiniciarPuentos() {
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        int[] marcador = juego.marcador("Jugador1","Jugador2");
+        assertEquals(0, marcador[0]);
+        assertEquals(0, marcador[1]);
+        assertEquals(1, marcador[2]);
+        assertEquals(0, marcador[3]);
     }
 }

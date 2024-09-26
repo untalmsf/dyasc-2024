@@ -26,7 +26,7 @@ public class juegoTenis {
                 this.puntaje1 = 40;
             } else if (this.puntaje1 == 40) {
                 this.puntaje1 = 0;
-                this.set1 = 1;
+                this.set1 += 1;
             } else
                 this.puntaje1 += 15;
         } else
@@ -34,9 +34,14 @@ public class juegoTenis {
                 this.puntaje2 = 40;
             } else if (this.puntaje2 == 40) {
                 this.puntaje2 = 0;
-                this.set2 = 1;
+                this.set2 += 1;
             }else
                 this.puntaje2 += 15;
 
+    }
+
+    public int[] marcador(String jugador1, String jugador2) {
+        int[] marcador = {this.obtenerPuntaje(jugador1), this.obtenerPuntaje(jugador2), this.set1, this.set2};
+        return marcador;
     }
 }
