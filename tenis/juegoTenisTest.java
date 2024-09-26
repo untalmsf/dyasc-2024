@@ -227,26 +227,32 @@ public class juegoTenisTest {
     }
     @Test
     public void ganarSet(){
+        //Game1
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
+        //Game2
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
+        //Game3
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
+        //Game4
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
+        //Game5
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
+        //Game6
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
@@ -258,8 +264,71 @@ public class juegoTenisTest {
         assertEquals(0, marcador[3]);
         assertEquals(0, marcador[4]);
         assertEquals(1, juego.obtenerSet(1));
-
-
     }
-
+    @Test
+    public void ganarGame5a6(){
+        //Game1
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game2
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game3
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game4
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game5
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game6
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        //Game7
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        //Game8
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        //Game9
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        //Game10
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        //Game11
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        int[] marcador = juego.marcador("Jugador1","Jugador2");
+        assertEquals(0, marcador[0]);
+        assertEquals(0, marcador[1]);
+        assertEquals(0, marcador[2]);
+        assertEquals(6, marcador[3]);
+        assertEquals(5, marcador[4]);
+        assertEquals(0, juego.obtenerSet(1));
+        assertEquals(0, juego.obtenerSet(2));
+    }
 }

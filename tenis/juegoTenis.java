@@ -1,11 +1,12 @@
 public class juegoTenis {
 
-    int puntaje1;
-    int puntaje2;
-    int games1;
-    int games2;
-    int set1;
-    int matchpoint;
+    private int puntaje1;
+    private int puntaje2;
+    private int games1;
+    private int games2;
+    private int sets1;
+    private int sets2;
+    private int matchpoint;
 
     public juegoTenis(String jugador1, String jugador2) {
         this.puntaje1 = 0;
@@ -21,42 +22,76 @@ public class juegoTenis {
 
         return this.puntaje2;
     }
+
+    public int obtenerSet(int jugador){
+        return jugador == 1 ? this.sets1 : this.sets2;
+    }
     
     public void pelotaExitosa(String jugador) {
         if (jugador.equals("Jugador1")) {
-            if (this.puntaje1 == 30) {
-                this.puntaje1 = 40;
-            } else if (this.puntaje1 == 40 && this.hayDeuce() && this.matchpoint == 1) {
-                this.puntaje1 = 0;
-                this.puntaje2 = 0;
-                this.matchpoint = 0;
-                this.games1 += 1;   
-            } else if (this.puntaje1 == 40 && this.hayDeuce() && this.matchpoint <= 0){
-                this.matchpoint += 1;
-            } else if (this.puntaje1 == 40 && !this.hayDeuce()) {
-                this.puntaje1 = 0;
-                this.puntaje2 = 0;
-                this.matchpoint = 0;
-                this.games1 += 1;
-            } else
-                this.puntaje1 += 15;
-        } else
-            if (this.puntaje2 == 30) {
-                this.puntaje2 = 40;
-            } else if (this.puntaje2 == 40 && this.hayDeuce() && this.matchpoint == -1) {
-                this.puntaje1 = 0;
-                this.puntaje2 = 0;
-                this.matchpoint = 0;
-                this.games2 += 1;
-            }else if (this.puntaje2 == 40 && this.hayDeuce() && this.matchpoint >= 0){
-                this.matchpoint += -1;
-            }else if (this.puntaje2 == 40 && !this.hayDeuce()) {
-                this.puntaje1 = 0;
-                this.puntaje2 = 0;
-                this.matchpoint = 0;
-                this.games2 += 1;
-            } else
-                this.puntaje2 += 15;
+            puntoJugador1();
+        } else {
+            puntoJugador2();
+        }
+    }
+
+    private void puntoJugador1() {
+        if (this.puntaje1 == 30) {
+            this.puntaje1 = 40;
+        } else if (this.puntaje1 == 40 && hayDeuce() && this.matchpoint == 1) {
+            ganarGame("Jugador1");
+        } else if (this.puntaje1 == 40 && hayDeuce() && this.matchpoint <= 0) {
+            this.matchpoint += 1;
+        } else if (this.puntaje1 == 40 && !hayDeuce()) {
+            ganarGame("Jugador1");
+        } else {
+            this.puntaje1 += 15;
+        }
+    }
+
+    private void puntoJugador2() {
+        if (this.puntaje2 == 30) {
+            this.puntaje2 = 40;
+        } else if (this.puntaje2 == 40 && hayDeuce() && this.matchpoint == -1) {
+            ganarGame("Jugador2");
+        } else if (this.puntaje2 == 40 && hayDeuce() && this.matchpoint >= 0) {
+            this.matchpoint -= 1;
+        } else if (this.puntaje2 == 40 && !hayDeuce()) {
+            ganarGame("Jugador2");
+        } else {
+            this.puntaje2 += 15;
+        }
+    }
+
+    private void ganarGame(String jugador) {
+        resetearPuntajes();
+        if (jugador.equals("Jugador1")) {
+            this.games1 += 1;
+            if (this.games1 == 6 ) {
+                ganarSet("Jugador1");
+            }
+        } else {
+            this.games2 += 1;
+            if (this.games2 == 6 ) {
+                ganarSet("Jugador2");
+            }
+        }
+    }
+
+    private void ganarSet(String jugador) {
+        this.games1 = 0;
+        this.games2 = 0;
+        if (jugador.equals("Jugador1")) {
+            this.sets1 += 1;
+        } else {
+            this.sets2 += 1;
+        }
+    }
+
+    private void resetearPuntajes() {
+        puntaje1 = 0;
+        puntaje2 = 0;
+        matchpoint = 0;
     }
     
     public int[] marcador(String jugador1, String jugador2) {
@@ -65,10 +100,7 @@ public class juegoTenis {
     }
 
     public boolean hayDeuce(){
-        if (this.puntaje1 == 40 && this.puntaje2 == 40){
-            return true;
-        } else 
-            return false;
+        return (puntaje1 == 40 && puntaje2 == 40);
     }
 
     
