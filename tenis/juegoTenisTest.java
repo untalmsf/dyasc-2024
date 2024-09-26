@@ -562,9 +562,9 @@ public class juegoTenisTest {
         assertEquals(4, marcador[4]);
         assertEquals(0, juego.obtenerSet(1));
         assertEquals(0, juego.obtenerSet(2));
-        String marcador = "Jugador1: " + 0 + " - Jugador2: " + 0 +
-                          " | Games: Jugador1 " + 5 + ", Jugador2 " + 4 +
-                          " | Sets: Jugador1 " + 0 + ", Jugador2 " + 0;
-        assertEquals(marcador, juego.obtenerGanador());
+        String puntuacion = "Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 5 + " - Jugador2: " + 4 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 }

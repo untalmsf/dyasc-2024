@@ -100,7 +100,21 @@ public class juegoTenis {
             }
         }
     }
-    
+    public String obtenerMarcador() {
+        
+        String marcador = "Jugador1: " + puntaje1 + " - Jugador2: " + puntaje2 +
+                          " | Games: Jugador1: " + games1 + " - Jugador2: " + games2 +
+                          " | Sets: Jugador1: " + sets1 + " - Jugador2: " + sets2;
+        if (hayDeuce()) {
+            marcador += " | Deuce";
+        }
+
+        if (hayTieBreak()) {
+            marcador += " | Tie Break";
+        }
+
+        return marcador;
+    }
     private void resetearPuntajes() {
         puntaje1 = 0;
         puntaje2 = 0;
@@ -114,6 +128,10 @@ public class juegoTenis {
 
     public boolean hayDeuce(){
         return (puntaje1 == 40 && puntaje2 == 40);
+    }
+    
+    private boolean hayTieBreak() {
+        return games1 == 6 && games2 == 6;
     }
 
     public String obtenerGanador() {
