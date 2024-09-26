@@ -67,12 +67,12 @@ public class juegoTenis {
         resetearPuntajes();
         if (jugador.equals("Jugador1")) {
             this.games1 += 1;
-            if (this.games1 == 6 ) {
+            if (this.games1 >= 6 && this.games1 - this.games2 >= 2) {
                 ganarSet("Jugador1");
             }
         } else {
             this.games2 += 1;
-            if (this.games2 == 6 ) {
+            if (this.games2 >= 6 && this.games2 - this.games1 >= 2) {
                 ganarSet("Jugador2");
             }
         }

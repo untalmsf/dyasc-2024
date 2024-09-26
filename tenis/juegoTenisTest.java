@@ -331,4 +331,180 @@ public class juegoTenisTest {
         assertEquals(0, juego.obtenerSet(1));
         assertEquals(0, juego.obtenerSet(2));
     }
+    
+    @Test
+    public void ganarSetTieBreack(){
+        //Game1
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game2
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game3
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game4
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game5
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game6
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        //Game7
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        //Game8
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        //Game9
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        //Game10
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        //Game11
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game12
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        int[] marcador = juego.marcador("Jugador1","Jugador2");
+        assertEquals(0, marcador[0]);
+        assertEquals(0, marcador[1]);
+        assertEquals(0, marcador[2]);
+        assertEquals(0, marcador[3]);
+        assertEquals(0, marcador[4]);
+        assertEquals(1, juego.obtenerSet(1));
+        assertEquals(0, juego.obtenerSet(2));
+    }
+    
+    @Test
+    public void obtenerGanador(){
+        //Game1
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game2
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game3
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game4
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game5
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game6
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game7
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game8
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game9
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game10
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game11
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game12
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game13
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game14
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game15
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game16
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game17
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game18
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        int[] marcador = juego.marcador("Jugador1","Jugador2");
+        assertEquals(0, marcador[0]);
+        assertEquals(0, marcador[1]);
+        assertEquals(0, marcador[2]);
+        assertEquals(0, marcador[3]);
+        assertEquals(0, marcador[4]);
+        assertEquals(3, juego.obtenerSet(1));
+        assertEquals(0, juego.obtenerSet(2));
+        assertEquals("Jugador1", juego.obtenerGanador());
+    }
+
 }
