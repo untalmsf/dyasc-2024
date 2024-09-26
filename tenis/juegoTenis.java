@@ -1,3 +1,5 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class juegoTenis {
 
     private int puntaje1;
@@ -7,6 +9,7 @@ public class juegoTenis {
     private int sets1;
     private int sets2;
     private int matchpoint;
+    private String ganador = "partido en curso";
 
     public juegoTenis(String jugador1, String jugador2) {
         this.puntaje1 = 0;
@@ -28,6 +31,10 @@ public class juegoTenis {
     }
     
     public void pelotaExitosa(String jugador) {
+        if (!"partido en curso".equals(this.ganador)) {
+            System.out.println("El juego ya ha terminado. El ganador es " + this.ganador);
+            return;
+        }
         if (jugador.equals("Jugador1")) {
             puntoJugador1();
         } else {
@@ -79,15 +86,21 @@ public class juegoTenis {
     }
 
     private void ganarSet(String jugador) {
-        this.games1 = 0;
-        this.games2 = 0;
+        games1 = 0;
+        games2 = 0;
         if (jugador.equals("Jugador1")) {
-            this.sets1 += 1;
+            sets1 += 1;
+            if (sets1 == 3) {
+                ganador = "Jugador1";
+            }
         } else {
-            this.sets2 += 1;
+            sets2 += 1;
+            if (sets2 == 3) {
+                ganador = "Jugador2";
+            }
         }
     }
-
+    
     private void resetearPuntajes() {
         puntaje1 = 0;
         puntaje2 = 0;
@@ -103,6 +116,8 @@ public class juegoTenis {
         return (puntaje1 == 40 && puntaje2 == 40);
     }
 
-    
+    public String obtenerGanador() {
+        return ganador;
+    }    
 
 }

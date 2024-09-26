@@ -506,5 +506,65 @@ public class juegoTenisTest {
         assertEquals(0, juego.obtenerSet(2));
         assertEquals("Jugador1", juego.obtenerGanador());
     }
-
+    
+    @Test
+    public void obtenerMarcador(){
+        //Game1
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game2
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game3
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game4
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game5
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        //Game6
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        //Game7
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        //Game8
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        //Game9
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        int[] marcador = juego.marcador("Jugador1","Jugador2");
+        assertEquals(0, marcador[0]);
+        assertEquals(0, marcador[1]);
+        assertEquals(0, marcador[2]);
+        assertEquals(5, marcador[3]);
+        assertEquals(4, marcador[4]);
+        assertEquals(0, juego.obtenerSet(1));
+        assertEquals(0, juego.obtenerSet(2));
+        String marcador = "Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1 " + 5 + ", Jugador2 " + 4 +
+                          " | Sets: Jugador1 " + 0 + ", Jugador2 " + 0;
+        assertEquals(marcador, juego.obtenerGanador());
+    }
 }
