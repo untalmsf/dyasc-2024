@@ -188,8 +188,9 @@ public class juegoTenisTest {
         int[] marcador = juego.marcador("Jugador1","Jugador2");
         assertEquals(0, marcador[0]);
         assertEquals(0, marcador[1]);
-        assertEquals(1, marcador[2]);
-        assertEquals(0, marcador[3]);
+        assertEquals(0, marcador[2]);
+        assertEquals(1, marcador[3]);
+        assertEquals(0, marcador[4]);
     }
 
     @Test
@@ -209,7 +210,7 @@ public class juegoTenisTest {
     }
     
     @Test
-    public void matchpoint() {
+    public void matchPoint() {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador1");
@@ -224,7 +225,41 @@ public class juegoTenisTest {
         assertEquals(0, marcador[3]);
         assertEquals(0, marcador[4]);
     }
+    @Test
+    public void ganarSet(){
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        int[] marcador = juego.marcador("Jugador1","Jugador2");
+        assertEquals(0, marcador[0]);
+        assertEquals(0, marcador[1]);
+        assertEquals(0, marcador[2]);
+        assertEquals(0, marcador[3]);
+        assertEquals(0, marcador[4]);
+        assertEquals(1, juego.obtenerSet(1));
 
-    
+
+    }
 
 }
