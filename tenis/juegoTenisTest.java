@@ -178,4 +178,26 @@ public class juegoTenisTest {
         assertEquals(40, juego.obtenerPuntaje("Jugador2"));
     }
 
+    @Test
+    public void cuarentaAtreinta() {
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        assertEquals(40, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(30, juego.obtenerPuntaje("Jugador2"));
+    }
+
+    @Test
+    public void obtenerMarcadorPartido() {
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        int[] marcador = juego.marcador();
+        assertEquals(40, juego.obtenerPuntaje("Jugador1"));
+        assertEquals(30, juego.obtenerPuntaje("Jugador2"));
+    }
 }
