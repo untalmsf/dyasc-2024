@@ -13,29 +13,38 @@ public class juegoTenisTest {
 
     @Test
     public void losJugadoresEmpiezanConCeroPuntos() {
-        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
     public void Jugador1PelotaExitoso() {
         juego.pelotaExitosa("Jugador1");
-        assertEquals(15, juego.obtenerPuntaje("Jugador1"));
+        String puntuacion = "Puntajes: Jugador1: " + 15 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
     public void primerPunto() {
         juego.pelotaExitosa("Jugador1");
-        assertEquals(15, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 15 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
     public void segundoPunto() {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
-        assertEquals(30, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 30 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
@@ -43,8 +52,10 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
-        assertEquals(40, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 40 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
@@ -53,23 +64,29 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
-        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 1 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
     public void primerPuntoJugador2() {
         juego.pelotaExitosa("Jugador2");
-        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(15, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 15 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
     public void segundoPuntoJugador2() {
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
-        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(30, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 30 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
@@ -77,8 +94,10 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
-        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(40, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 40 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
@@ -87,8 +106,10 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
-        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 1 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
@@ -98,11 +119,10 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
-        juego.pelotaExitosa("Jugador2");
-        juego.pelotaExitosa("Jugador2");
-        juego.pelotaExitosa("Jugador2");
-        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 15 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 1 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
@@ -115,8 +135,10 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
-        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 2 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
@@ -129,8 +151,10 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
-        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 2 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
@@ -143,16 +167,20 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
-        assertEquals(0, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(0, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 1 + " - Jugador2: " + 1 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
     public void quinceAquince() {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador2");
-        assertEquals(15, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(15, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 15 + " - Jugador2: " + 15 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
@@ -161,8 +189,10 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador2");
-        assertEquals(30, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(30, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 30 + " - Jugador2: " + 30 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
@@ -173,8 +203,10 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador2");
-        assertEquals(40, juego.obtenerPuntaje("Jugador1"));
-        assertEquals(40, juego.obtenerPuntaje("Jugador2"));
+        String puntuacion = "Puntajes: Jugador1: " + 40 + " - Jugador2: " + 40 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0 + " | Deuce";
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
@@ -185,7 +217,7 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
-        String puntuacion = "Jugador1: " + 0 + " - Jugador2: " + 0 +
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 0 +
                           " | Games: Jugador1: " + 1 + " - Jugador2: " + 0 +
                           " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
         assertEquals(puntuacion, juego.obtenerMarcador());
@@ -199,7 +231,7 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador2");
-        String puntuacion = "Jugador1: " + 40 + " - Jugador2: " + 40 +
+        String puntuacion = "Puntajes: Jugador1: " + 40 + " - Jugador2: " + 40 +
                           " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
                           " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0 + " | Deuce";
         assertEquals(puntuacion, juego.obtenerMarcador());
@@ -214,11 +246,48 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador1");
-        String puntuacion = "Jugador1: " + 40 + " - Jugador2: " + 40 +
+        String puntuacion = "Puntajes: Jugador1: " + 40 + " - Jugador2: " + 40 +
                           " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
-                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0 + " | Deuce";
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0 + " | Ventaja Jugador1";
         assertEquals(puntuacion, juego.obtenerMarcador());
     }
+    
+    @Test
+    public void matchPointGameJugador2() {
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 1 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
+    }
+    
+    @Test
+    public void matchPointGameJugador1() {
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador2");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        juego.pelotaExitosa("Jugador1");
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 1 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
+    }
+
     @Test
     public void ganarSet(){
         //Game1
@@ -251,7 +320,7 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
-        String puntuacion = "Jugador1: " + 0 + " - Jugador2: " + 0 +
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 0 +
                           " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
                           " | Sets: Jugador1: " + 1 + " - Jugador2: " + 0;
         assertEquals(puntuacion, juego.obtenerMarcador());
@@ -313,7 +382,7 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
-        String puntuacion = "Jugador1: " + 0 + " - Jugador2: " + 0 +
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 0 +
                           " | Games: Jugador1: " + 6 + " - Jugador2: " + 5 +
                           " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
         assertEquals(puntuacion, juego.obtenerMarcador());
@@ -381,7 +450,7 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
-        String puntuacion = "Jugador1: " + 0 + " - Jugador2: " + 0 +
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 0 +
                           " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
                           " | Sets: Jugador1: " + 1 + " - Jugador2: " + 0;
         assertEquals(puntuacion, juego.obtenerMarcador());
@@ -479,7 +548,7 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
-        String puntuacion = "Jugador1: " + 0 + " - Jugador2: " + 0 +
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 0 +
                           " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
                           " | Sets: Jugador1: " + 3 + " - Jugador2: " + 0;
         assertEquals(puntuacion, juego.obtenerMarcador());
@@ -532,7 +601,7 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
-        String puntuacion = "Jugador1: " + 0 + " - Jugador2: " + 0 +
+        String puntuacion = "Puntajes: Jugador1: " + 0 + " - Jugador2: " + 0 +
                           " | Games: Jugador1: " + 5 + " - Jugador2: " + 4 +
                           " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
         assertEquals(puntuacion, juego.obtenerMarcador());
