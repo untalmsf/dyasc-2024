@@ -5,10 +5,12 @@ import org.junit.jupiter.api.Test;
 public class juegoTenisTest {
 
     private juegoTenis juego;
+    private juegoTenis juego2;
 
     @BeforeEach
     public void setUp() {
         juego = new juegoTenis("Jugador1", "Jugador2");
+        juego2 = new juegoTenis("Jorge", "Pedro");
     }
 
     @Test
@@ -605,5 +607,41 @@ public class juegoTenisTest {
                           " | Games: Jugador1: " + 5 + " - Jugador2: " + 4 +
                           " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
         assertEquals(puntuacion, juego.obtenerMarcador());
+    }
+    
+    @Test
+    public void matchPointGameJorge() {
+        juego2.pelotaExitosa("Jorge");
+        juego2.pelotaExitosa("Pedro");
+        juego2.pelotaExitosa("Jorge");
+        juego2.pelotaExitosa("Pedro");
+        juego2.pelotaExitosa("Jorge");
+        juego2.pelotaExitosa("Pedro");
+        juego2.pelotaExitosa("Pedro");
+        juego2.pelotaExitosa("Jorge");
+        juego2.pelotaExitosa("Jorge");
+        juego2.pelotaExitosa("Jorge");
+        String puntuacion = "Puntajes: Jorge: " + 0 + " - Pedro: " + 0 +
+                          " | Games: Jorge: " + 1 + " - Pedro: " + 0 +
+                          " | Sets: Jorge: " + 0 + " - Pedro: " + 0;
+        assertEquals(puntuacion, juego2.obtenerMarcador());
+    }
+    
+    @Test
+    public void matchPointGamePedro() {
+        juego2.pelotaExitosa("Jorge");
+        juego2.pelotaExitosa("Pedro");
+        juego2.pelotaExitosa("Jorge");
+        juego2.pelotaExitosa("Pedro");
+        juego2.pelotaExitosa("Jorge");
+        juego2.pelotaExitosa("Pedro");
+        juego2.pelotaExitosa("Pedro");
+        juego2.pelotaExitosa("Jorge");
+        juego2.pelotaExitosa("Pedro");
+        juego2.pelotaExitosa("Pedro");
+        String puntuacion = "Puntajes: Jorge: " + 0 + " - Pedro: " + 0 +
+                          " | Games: Jorge: " + 0 + " - Pedro: " + 1 +
+                          " | Sets: Jorge: " + 0 + " - Pedro: " + 0;
+        assertEquals(puntuacion, juego2.obtenerMarcador());
     }
 }

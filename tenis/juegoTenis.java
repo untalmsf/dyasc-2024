@@ -8,7 +8,7 @@ public class juegoTenis {
     public juegoTenis(String nombrejugador1, String nombrejugador2) {
         this.jugador1 = new jugador(nombrejugador1);
         this.jugador2 = new jugador(nombrejugador2);
-        this.marcador = new marcador();
+        this.marcador = new marcador(this.jugador1, this.jugador2);
     }
 
     public void pelotaExitosa(String jugador) {
@@ -17,18 +17,18 @@ public class juegoTenis {
             return;
         }
         if (jugador.equals(jugador1.obtenerNombre())) {
-            marcador.incrementarPuntaje(1);
+            marcador.incrementarPuntaje(this.jugador1);
         } else {
-            marcador.incrementarPuntaje(2);
+            marcador.incrementarPuntaje(this.jugador2);
         }
 
         verificarGanador();
     }
 
     private void verificarGanador() {
-        if (marcador.obtenerSets(1) == 3) {
+        if (marcador.obtenerSets(this.jugador1) == 3) {
             ganador = jugador1.obtenerNombre();
-        } else if (marcador.obtenerSets(2) == 3) {
+        } else if (marcador.obtenerSets(this.jugador2) == 3) {
             ganador = jugador2.obtenerNombre();
         }
     }

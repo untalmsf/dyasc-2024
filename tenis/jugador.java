@@ -1,15 +1,16 @@
 public class jugador {
-    
     private String nombre;
     private int puntaje;
     private int games;
     private int sets;
+    private int tieBreakPuntos;
 
     public jugador(String nombre) {
         this.nombre = nombre;
         this.puntaje = 0;
         this.games = 0;
         this.sets = 0;
+        this.tieBreakPuntos = 0;
     }
 
     public String obtenerNombre() {
@@ -54,5 +55,13 @@ public class jugador {
 
     public void resetearPuntaje() {
         this.puntaje = 0;
+    }
+
+    public int obtenerTieBreakPuntos() {
+        return tieBreakPuntos;
+    }
+
+    public void incrementarTieBreakPuntos() {
+        this.tieBreakPuntos++;
     }
 }
