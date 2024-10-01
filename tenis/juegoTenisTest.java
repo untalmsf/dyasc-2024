@@ -185,12 +185,10 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
-        int[] marcador = juego.marcador("Jugador1","Jugador2");
-        assertEquals(0, marcador[0]);
-        assertEquals(0, marcador[1]);
-        assertEquals(0, marcador[2]);
-        assertEquals(1, marcador[3]);
-        assertEquals(0, marcador[4]);
+        String puntuacion = "Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 1 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
 
     @Test
@@ -201,12 +199,10 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador2");
-        int[] marcador = juego.marcador("Jugador1","Jugador2");
-        assertTrue(juego.hayDeuce());
-        assertEquals(40, marcador[0]);
-        assertEquals(40, marcador[1]);
-        assertEquals(0, marcador[2]);
-        assertEquals(0, marcador[3]);
+        String puntuacion = "Jugador1: " + 40 + " - Jugador2: " + 40 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0 + " | Deuce";
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
     
     @Test
@@ -218,12 +214,10 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador1");
-        int[] marcador = juego.marcador("Jugador1","Jugador2");
-        assertEquals(40, marcador[0]);
-        assertEquals(40, marcador[1]);
-        assertEquals(1, marcador[2]);
-        assertEquals(0, marcador[3]);
-        assertEquals(0, marcador[4]);
+        String puntuacion = "Jugador1: " + 40 + " - Jugador2: " + 40 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0 + " | Deuce";
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
     @Test
     public void ganarSet(){
@@ -257,13 +251,10 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
-        int[] marcador = juego.marcador("Jugador1","Jugador2");
-        assertEquals(0, marcador[0]);
-        assertEquals(0, marcador[1]);
-        assertEquals(0, marcador[2]);
-        assertEquals(0, marcador[3]);
-        assertEquals(0, marcador[4]);
-        assertEquals(1, juego.obtenerSet(1));
+        String puntuacion = "Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 1 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
     @Test
     public void ganarGame5a6(){
@@ -322,14 +313,10 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
-        int[] marcador = juego.marcador("Jugador1","Jugador2");
-        assertEquals(0, marcador[0]);
-        assertEquals(0, marcador[1]);
-        assertEquals(0, marcador[2]);
-        assertEquals(6, marcador[3]);
-        assertEquals(5, marcador[4]);
-        assertEquals(0, juego.obtenerSet(1));
-        assertEquals(0, juego.obtenerSet(2));
+        String puntuacion = "Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 6 + " - Jugador2: " + 5 +
+                          " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
     
     @Test
@@ -394,14 +381,10 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
-        int[] marcador = juego.marcador("Jugador1","Jugador2");
-        assertEquals(0, marcador[0]);
-        assertEquals(0, marcador[1]);
-        assertEquals(0, marcador[2]);
-        assertEquals(0, marcador[3]);
-        assertEquals(0, marcador[4]);
-        assertEquals(1, juego.obtenerSet(1));
-        assertEquals(0, juego.obtenerSet(2));
+        String puntuacion = "Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 1 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
     
     @Test
@@ -496,15 +479,10 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
         juego.pelotaExitosa("Jugador1");
-        int[] marcador = juego.marcador("Jugador1","Jugador2");
-        assertEquals(0, marcador[0]);
-        assertEquals(0, marcador[1]);
-        assertEquals(0, marcador[2]);
-        assertEquals(0, marcador[3]);
-        assertEquals(0, marcador[4]);
-        assertEquals(3, juego.obtenerSet(1));
-        assertEquals(0, juego.obtenerSet(2));
-        assertEquals("Jugador1", juego.obtenerGanador());
+        String puntuacion = "Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Games: Jugador1: " + 0 + " - Jugador2: " + 0 +
+                          " | Sets: Jugador1: " + 3 + " - Jugador2: " + 0;
+        assertEquals(puntuacion, juego.obtenerMarcador());
     }
     
     @Test
@@ -554,14 +532,6 @@ public class juegoTenisTest {
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
         juego.pelotaExitosa("Jugador2");
-        int[] marcador = juego.marcador("Jugador1","Jugador2");
-        assertEquals(0, marcador[0]);
-        assertEquals(0, marcador[1]);
-        assertEquals(0, marcador[2]);
-        assertEquals(5, marcador[3]);
-        assertEquals(4, marcador[4]);
-        assertEquals(0, juego.obtenerSet(1));
-        assertEquals(0, juego.obtenerSet(2));
         String puntuacion = "Jugador1: " + 0 + " - Jugador2: " + 0 +
                           " | Games: Jugador1: " + 5 + " - Jugador2: " + 4 +
                           " | Sets: Jugador1: " + 0 + " - Jugador2: " + 0;
